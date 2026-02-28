@@ -13,9 +13,11 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: Trigger Render Deploy
-        run: |
-          curl -X POST "$RENDER_DEPLOY_HOOK_URL"
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Deploy to Railway
+        run: railway redeploy --service cicd -y
         env:
-          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
