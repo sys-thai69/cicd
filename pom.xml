@@ -70,7 +70,6 @@
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -112,19 +111,6 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -188,21 +174,9 @@
 				<artifactId>jib-maven-plugin</artifactId>
 				<version>3.4.0</version>
 				<configuration>
-					<from>
-						<image>eclipse-temurin:17-jre</image>
-					</from>
 					<to>
-						<image>ghcr.io/${env.GITHUB_REPOSITORY}:latest</image>
-						<auth>
-							<username>${env.GHCR_USERNAME}</username>
-							<password>${env.GHCR_TOKEN}</password>
-						</auth>
+						<image>ghcr.io/sys-thai69/cicd:latest</image>
 					</to>
-					<container>
-						<ports>
-							<port>8080</port>
-						</ports>
-					</container>
 				</configuration>
 			</plugin>
 		</plugins>
